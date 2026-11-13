@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>♡ Toja!! ♡</title>
+
+<!-- FUENTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   TOJA!!
+   BLOG 2000s / COQUETTE / VINTAGE / GOTHIC
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    color: #5d4a50;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    background-color: #f8e9ef;
+
+    background-image:
+
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,.65) 0px,
+            rgba(255,255,255,.65) 25px,
+            transparent 25px,
+            transparent 50px
+        ),
+
+        linear-gradient(
+            #f8e9ef,
+            #f5dce5
+        );
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   DECORACIÓN DE PUNTITOS
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background-image:
+
+        radial-gradient(
+            #ffffff 1.5px,
+            transparent 1.5px
+        );
+
+    background-size: 14px 14px;
+
+    opacity: .45;
+
+}
+
+
+/* =========================================================
+   MARCO GENERAL
+========================================================= */
+
+.page {
+
+    width: 94%;
+
+    max-width: 950px;
+
+    margin: 25px auto 60px;
+
+}
+
+
+/* =========================================================
+   ORNAMENTO SUPERIOR
+========================================================= */
+
+.ornament {
+
+    text-align: center;
+
+    color: #514348;
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: 45px;
+
+    line-height: .6;
+
+    text-shadow:
+        1px 1px white;
+
+    letter-spacing: -5px;
+
+    margin-bottom: -10px;
+
+}
+
+.ornament span {
+
+    display: inline-block;
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+/* =========================================================
+   VENTANA PRINCIPAL
+========================================================= */
+
+.window {
+
+    border-radius: 17px;
+
+    border: 1px solid #6b6064;
+
+    background: #eadde1;
+
+    box-shadow:
+
+        0 4px 0 #ffffff,
+
+        0 10px 25px rgba(80,50,60,.3),
+
+        inset 0 0 0 2px #f8f1f3;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   BARRA DE VENTANA
+========================================================= */
+
+.window-bar {
+
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    background:
+
+        linear-gradient(
+            #ffffff,
+            #cfc6ca 48%,
+            #aaa2a5 52%,
+            #f4eef0
+        );
+
+    border-bottom: 2px solid #81777b;
+
+}
+
+
+/* Logo de la ventana */
+
+.window-logo {
+
+    color: #211d20;
+
+    font-size: 30px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-style: italic;
+
+}
+
+
+/* Botones */
+
+.window-buttons {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+.window-button {
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #a69a9e;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #e5d9de
+        );
+
+    color: #8d7b82;
+
+    font-size: 13px;
+
+    box-shadow:
+        inset 0 1px white;
+
+}
+
+
+/* =========================================================
+   ENCaje superior
+========================================================= */
+
+.lace {
+
+    height: 20px;
+
+    background-color: white;
+
+    background-image:
+
+        radial-gradient(
+            circle at 50% 100%,
+            #272326 5px,
+            transparent 6px
+        );
+
+    background-size: 14px 14px;
+
+    border-bottom: 1px solid #b5a8ad;
+
+}
+
+
+/* =========================================================
+   BARRA DE NAVEGACIÓN
+========================================================= */
+
+.navigation {
+
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background:
+
+        linear-gradient(
+            #fffafd,
+            #ead9df
+        );
+
+    border-bottom: 1px solid #b6aab0;
+
+}
+
+
+/* Inputs */
+
+.search {
+
+    width: 260px;
+
+    height: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid #aaa0a5;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #f1e8eb
+        );
+
+    padding: 0 15px;
+
+    color: #7c6c72;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 15px;
+
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,.1);
+
+}
+
+
+/* Botón search */
+
+.search-btn {
+
+    height: 31px;
+
+    padding: 0 18px;
+
+    border-radius: 17px;
+
+    border: 1px solid #b3a4aa;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #e9dce1
+        );
+
+    color: #6e5b62;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.content {
+
+    display: grid;
+
+    grid-template-columns:
+        230px
+        1fr;
+
+    min-height: 470px;
+
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.profile {
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.8),
+            rgba(239,216,225,.8)
+        );
+
+    border-right: 1px solid #c4b6bc;
+
+    padding: 18px;
+
+    text-align: center;
+
+}
+
+
+/* Foto */
+
+.profile-image {
+
+    width: 175px;
+    height: 175px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 4px;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.2);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #d8b8c5,
+            #f3dfe7
+        );
+
+    overflow: hidden;
+
+}
+
+
+.profile-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* Nombre */
+
+.name {
+
+    font-size: 30px;
+
+    color: #493d42;
+
+    font-style: italic;
+
+    margin: 5px;
+
+}
+
+
+/* Links */
+
+.profile-links {
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+}
+
+.profile-links a {
+
+    color: #715c65;
+
+    text-decoration:
+        underline;
+
+    margin: 2px;
+
+}
+
+
+/* =========================================================
+   ÁREA ABOUT ME
+========================================================= */
+
+.about {
+
+    padding: 18px;
+
+    background:
+
+        radial-gradient(
+            #ffffff 1.8px,
+            transparent 2px
+        );
+
+    background-size: 24px 24px;
+
+    background-color: #403b3e;
+
+}
+
+
+/* Caja rosa */
+
+.about-title {
+
+    max-width: 360px;
+
+    margin: 0 auto 20px;
+
+    padding: 10px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            #fff8fb,
+            #f2cadb
+        );
+
+    border: 1px solid #bca9b1;
+
+    color: #57474d;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-style: italic;
+
+    box-shadow:
+
+        0 4px 7px
+        rgba(0,0,0,.3),
+
+        inset 0 2px white;
+
+}
+
+
+/* Texto */
+
+.about-text {
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 17px;
+
+    line-height: 1.35;
+
+}
+
+.about-text span {
+
+    background: #e8c8d3;
+
+    color: #fff;
+
+    padding: 2px 5px;
+
+}
+
+
+/* =========================================================
+   ICONOS SOCIALES
+========================================================= */
+
+.socials {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 20px;
+
+}
+
+.social {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #fff,
+            #eac4d2
+        );
+
+    border: 1px solid #c3aeb7;
+
+    color: #6c555e;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.3);
+
+    transition: .3s;
+
+}
+
+.social:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        linear-gradient(
+            #fff,
+            #f4aeca
+        );
+
+}
+
+
+/* =========================================================
+   PARTE INFERIOR DEL ABOUT
+========================================================= */
+
+.info-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.5fr;
+
+    margin-top: 25px;
+
+    border-top:
+        1px solid #b8a8ae;
+
+}
+
+
+/* DNI */
+
+.dni {
+
+    padding: 15px;
+
+    color: white;
+
+    font-size: 14px;
+
+    text-align: center;
+
+}
+
+
+/* INTERESES */
+
+.interests {
+
+    padding: 15px;
+
+    color: white;
+
+    border-left:
+        1px solid #b8a8ae;
+
+    font-size: 14px;
+
+}
+
+.label {
+
+    background: #eee;
+
+    color: #5c5054;
+
+    padding: 2px 7px;
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+========================================================= */
+
+.bottom-window {
+
+    border-top: 0;
+
+}
+
+
+/* =========================================================
+   DECORACIÓN LATERAL
+========================================================= */
+
+.ribbon {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #332b2f;
+
+    letter-spacing: -5px;
+
+}
+
+
+/* =========================================================
+   SECCIONES DEL BLOG
+========================================================= */
+
+.blog-section {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    border:
+        1px solid #b8aab0;
+
+    border-radius: 12px;
+
+    box-shadow:
+
+        inset 0 1px white,
+
+        0 5px 15px
+        rgba(80,40,60,.15);
+
+}
+
+
+/* Títulos */
+
+.blog-title {
+
+    text-align: center;
+
+    color: #6d555e;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 27px;
+
+    font-style: italic;
+
+    margin-bottom: 18px;
+
+}
+
+.blog-title::before {
+
+    content: "♡ ";
+
+}
+
+.blog-title::after {
+
+    content: " ♡";
+
+}
+
+
+/* =========================================================
+   NANAMI
+========================================================= */
+
+.nanami-card {
+
+    display: grid;
+
+    grid-template-columns:
+        180px
+        1fr;
+
+    gap: 20px;
+
+    align-items: center;
+
+}
+
+
+.nanami-photo {
+
+    height: 240px;
+
+    border: 6px solid white;
+
+    background:
+        #d7c0c8;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.2);
+
+    overflow: hidden;
+
+}
+
+
+.nanami-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.nanami-text {
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ALBUMES
+========================================================= */
+
+.albums {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+}
+
+
+.album {
+
+    padding: 8px;
+
+    background: #fff;
+
+    border:
+        1px solid #c6b7bd;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.15);
+
+    transition: .25s;
+
+}
+
+
+.album:hover {
+
+    transform:
+        rotate(-2deg)
+        translateY(-4px);
+
+}
+
+
+.album-cover {
+
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9c4d2,
+            #5d5559
+        );
+
+}
+
+
+.album-cover img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.album-title {
+
+    text-align: center;
+
+    padding-top: 7px;
+
+    color: #68535b;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   MÚSICA — SPOTIFY
+========================================================= */
+
+.music-player {
+
+    background:
+        linear-gradient(
+            #51484c,
+            #292527
+        );
+
+    border: 5px solid white;
+
+    padding: 12px;
+
+    color: white;
+
+    box-shadow:
+        inset 0 0 10px black;
+
+    border-radius: 8px;
+
+}
+
+
+.music-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        2px 5px 10px;
+
+}
+
+
+.music-header .song {
+
+    font-size: 18px;
+
+    font-style: italic;
+
+}
+
+
+.music-header small {
+
+    color: #e8b6c8;
+
+    font-size: 14px;
+
+}
+
+
+.music-player iframe {
+
+    display: block;
+
+    width: 100%;
+
+    height: 352px;
+
+    border: none;
+
+    border-radius: 8px;
+
+}
+
+
+/* =========================================================
+   FOTOS
+========================================================= */
+
+.photo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 10px;
+
+}
+
+
+.photo {
+
+    aspect-ratio: 1;
+
+    padding: 10px;
+
+    background: white;
+
+    border:
+        1px solid #b7a7ae;
+
+}
+
+
+.photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-lace {
+
+    height: 1px;
+
+    margin-top: 1px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0,
+            #302b2e 5px,
+            transparent 6px
+        );
+
+    background-size: 20px 20px;
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #82dccc;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:750px) {
+
+    .content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .profile {
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid #c4b6bc;
+
+    }
+
+    .nanami-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .nanami-photo {
+
+        width: 180px;
+
+        margin: auto;
+
+    }
+
+    .albums {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .navigation {
+
+        flex-wrap: wrap;
+
+        height: auto;
+
+        padding: 10px;
+
+    }
+
+    .search {
+
+        width: 55%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     ORNAMENTO
+====================================================== -->
+
+<div class="ornament">
+
+    ♧ ❦ ❧ ♧
+
+</div>
+
+
+<!-- =====================================================
+     VENTANA PRINCIPAL
+====================================================== -->
+
+<div class="window">
+
+
+<!-- BARRA -->
+
+<div class="window-bar">
+
+    <div class="window-logo">
+        † Toja!!
+    </div>
+
+    <div class="window-buttons">
+
+        <div class="window-button">
+            −
+        </div>
+
+        <div class="window-button">
+            □
+        </div>
+
+        <div class="window-button">
+            ×
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ENCAJE -->
+
+<div class="lace"></div>
+
+
+<!-- =====================================================
+     NAVEGACIÓN
+====================================================== -->
+
+<div class="navigation">
+
+    <div class="window-button">
+        ○
+    </div>
+
+    <div class="window-button">
+        ●
+    </div>
+
+    <div class="window-button">
+        ●
+    </div>
+
+
+    <input
+        class="search"
+        placeholder="title here"
+    >
+
+
+    <button
+        class="search-btn"
+        onclick="searchMessage()"
+    >
+
+        search
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+====================================================== -->
+
+<div class="content">
+
+
+<!-- =====================================================
+     PERFIL
+====================================================== -->
+
+<aside class="profile">
+
+
+    <div class="profile-image">
+
+        <img
+            src="imagenes/NANAMI _I LOVE MY FICTIONAL HUSBAND_.jpg"
+            alt="Nanami Kento"
+        >
+
+    </div>
+
+
+    <div class="name">
+
+        † toja
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="#about">
+            yos
+        </a>
+
+        †
+
+        <a href="#spotify">
+            comms
+        </a>
+
+        †
+
+        <a href="#photos">
+            anytwl
+        </a>
+
+    </div>
+
+
+    <br>
+
+
+    <small>
+
+        ♡ welcome to my little page ♡
+
+    </small>
+
+
+</aside>
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<main class="about" id="about">
+
+
+    <div class="about-title">
+
+        About me ₍₍⚞(˶˃ ꒳ ˂˶)⚟⁾⁾
+
+    </div>
+
+
+    <div class="about-text">
+
+        <span>
+            ♡ 18+ · she/Her
+        </span>
+
+        <br><br>
+
+        <span>
+            ♡ loquita XD
+        </span>
+
+        <br><br>
+
+        <span>
+            ♡ Yumeshipper, Artista, Fan de Melanie Martinez,amo los pandas rojos y gatos naranjas 
+            gore,pastel,personajes,oc
+        </span>
+
+        <br><br>
+
+        <span>
+            ♡ Esposa de Nanami Kento 
+        </span>
+
+    </div>
+
+
+    <!-- SOCIAL -->
+
+    <div class="socials">
+
+        <div
+            class="social"
+            onclick="socialAlert('Instagram')"
+        >
+            ◎
+        </div>
+
+        <div
+            class="social"
+            onclick="socialAlert('TikTok')"
+        >
+            ♪
+        </div>
+
+        <div
+            class="social"
+            onclick="socialAlert('Tumblr')"
+        >
+            T
+        </div>
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <div class="info-bottom">
+
+
+        <div class="dni">
+
+            <span class="label">
+                dni
+            </span>
+
+            minors, edtwt,
+            shtwt
+
+        </div>
+
+
+        <div class="interests">
+
+            <span class="label">
+                interests
+            </span>
+
+            red bull · monster ·
+            flavored cigs
+
+            <br>
+
+            <i>
+                lucky charms · tarot · crystals
+            </i>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+</div>
+
+
+<!-- ENCAJE -->
+
+<div class="lace"></div>
+
+
+</div>
+
+
+<!-- =====================================================
+     ORNAMENTO
+====================================================== -->
+
+<div class="ribbon">
+
+    ❧ ❦ ❧ ❦ ❧
+
+</div>
+
+
+<!-- =====================================================
+     BLOG: NANAMI
+====================================================== -->
+
+<section class="blog-section">
+
+
+    <div class="blog-title">
+        El amor de mi vida
+    </div>
+
+
+    <div class="nanami-card">
+
+
+        <div class="nanami-photo">
+
+            <img
+                src="imagenes/Kento Nanami.jpg"
+                alt="Nanami Kento"
+            >
+
+        </div>
+
+
+        <div class="nanami-text">
+
+            <p>
+
+                <b>Toja's husband ♡</b>
+
+            </p>
+
+
+            <p>
+
+                este es oficialmente mi rincón dedicado
+                al hombre más elegante, guapo y maravilloso de todo el mundo.
+                datos: 
+                Masculino,
+                27 años,
+                3/07,
+                1.84 m,
+                13.7cm exactos,
+                Oficinista y Hechicero de primer Grado,
+                Japones/ Danés,
+                actor de voz: Kenjiro Tsuda,
+                le encanta cocinar, el pan y beber alcohol(buena copa y resiste bien ),
+                siempre viste ropa formal y elegante.
+
+            </p>
+
+
+            <p>
+
+                traje + corbata + lentes =
+                absolutamente impecable.
+
+            </p>
+
+
+            <p>
+
+                <i>
+                    "Trabajar es un asco."
+                </i>
+
+            </p>
+
+
+            <p>
+
+                ★★★★★
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     ALBUMES
+====================================================== -->
+
+<section class="blog-section" id="music">
+
+
+    <div class="blog-title">
+
+        Mi cantante Fav <3
+
+    </div>
+
+
+    <div class="albums">
+
+
+        <!-- Melanie Martinez -->
+
+        <div class="album">
+
+
+            <div class="album-cover">
+
+                <img
+                    src="imagenes/Melanie Martinez (1).jpg"
+                    alt="Melanie Martinez"
+                >
+
+            </div>
+
+
+            <div class="album-title">
+
+                Cry Baby
+
+                <br>
+
+                <small>
+                    Melanie Martinez
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Marina -->
+
+        <div class="album">
+
+
+            <div class="album-cover">
+
+                <img
+                    src="imagenes/descarga (8).jpg"
+                    alt="Marina"
+                >
+
+            </div>
+
+
+            <div class="album-title">
+
+                Marina
+
+                <br>
+
+                <small>
+                    Melanie Martinez
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Britney Spears -->
+
+        <div class="album">
+
+
+            <div class="album-cover">
+
+                <img
+                    src="imagenes/Britney Spears.jpg"
+                    alt="Britney Spears"
+                >
+
+            </div>
+
+
+            <div class="album-title">
+
+                Britney Spears
+
+                <br>
+
+                <small>
+                    Melanie Martinez
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MÚSICA — ÚNICO APARTADO MODIFICADO
+====================================================== -->
+
+<section class="blog-section" id="spotify">
+
+
+    <div class="blog-title">
+
+        music player
+
+    </div>
+
+
+    <div class="music-player">
+
+
+        <div class="music-header">
+
+            <div class="song">
+
+                ♫ current obsession
+
+            </div>
+
+            <small>
+
+                Toja's playlist
+
+            </small>
+
+        </div>
+
+
+        <iframe
+            src="https://open.spotify.com/embed/playlist/2RJqPXWpr59BAIHlX0gdT0?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOTOS
+====================================================== -->
+
+<section class="blog-section" id="photos">
+
+
+    <div class="blog-title">
+
+        My Art :v
+
+    </div>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo">
+
+            <img
+                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM (2).jpeg"
+                alt="foto"
+            >
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM (3).jpeg"
+                alt="foto"
+            >
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM.jpeg"
+                alt="foto"
+            >
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="WhatsApp Image 2026-09-18 at 1.11.30 PM (1).jpeg"
+                alt="foto"
+            >
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MINI BLOG
+====================================================== -->
+
+<section class="blog-section">
+
+
+    <div class="blog-title">
+
+        toja's diary
+
+    </div>
+
+
+    <p>
+
+        <b>
+            09 / 03 / 2007
+        </b>
+
+    </p>
+
+
+    <p>
+
+        tres tistres tigres comen trigo en un trigal, tres.
+
+    </p>
+
+
+    <p>
+
+        también cambié el fondo de mi perfil
+        como 14 veces.
+
+    </p>
+
+
+    <p>
+
+        probablemente mañana vuelva a cambiarlo.
+
+    </p>
+
+
+    <center>
+
+        ♡ XD ♡
+
+    </center>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div class="footer-lace"></div>
+
+
+<footer>
+
+    ♡ Empanadas ♡
+
+    <br><br>
+
+    <span style="
+        font-size:12px;
+    ">
+
+        best viewed with Internet Explorer
+
+        <br>
+
+        † 2000s forever †
+
+    </span>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchMessage() {
+
+    const input =
+        document.querySelector(".search");
+
+    if (
+        input.value.trim() === ""
+    ) {
+
+        alert(
+            "♡ type something first ♡"
+        );
+
+    } else {
+
+        alert(
+            "searching for: " +
+            input.value +
+            " ♡"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+function socialAlert(site) {
+
+    alert(
+        "♡ Toja's " +
+        site +
+        " ♡\n\n" +
+        "link coming soon..."
+    );
+
+}
+
+
+/* =====================================================
+   CLICK DECORATION
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(e) {
+
+        const heart =
+            document.createElement("span");
+
+        heart.innerHTML = "♡";
+
+        heart.style.position =
+            "fixed";
+
+        heart.style.left =
+            e.clientX + "px";
+
+        heart.style.top =
+            e.clientY + "px";
+
+        heart.style.color =
+            "#d99bad";
+
+        heart.style.fontSize =
+            "20px";
+
+        heart.style.pointerEvents =
+            "none";
+
+        heart.style.zIndex =
+            "9999";
+
+        heart.style.transition =
+            "1s";
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.style.transform =
+                "translateY(-30px)";
+
+            heart.style.opacity =
+                "0";
+
+        }, 20);
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 1000);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
