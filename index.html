@@ -14,9 +14,525 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 
-
 <style>
+    /* =========================================================
+   GIFS DECORATIVOS LATERALES
+   No cubren las tiras de cine ni la información
+========================================================= */
 
+.side-gif {
+    position: fixed;
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* GIF DEL LADO IZQUIERDO */
+.side-gif-left {
+    left: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* GIF DEL LADO DERECHO */
+.side-gif-right {
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* En pantallas pequeñas se esconden */
+@media (max-width: 1250px) {
+    .side-gif {
+        display: none;
+    }
+}
+/* =========================================================
+   LLUVIA SUTIL DE GIFS
+========================================================= */
+
+.gif-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9998;
+}
+
+.gif-drop {
+    position: absolute;
+
+    width: 60px;
+    height: 64px;
+
+    object-fit: cover;
+
+    opacity: .66;
+
+    animation:
+        gifFall linear infinite;
+}
+
+
+/* GIF 1 */
+
+.gif-drop.gif-one {
+    background-image: url("imagenes/cat.gif");
+    background-size: 60px 64px;
+}
+
+
+/* GIF 2 */
+
+.gif-drop.gif-two {
+    background-image: url("imagenes/miku-hatsune.gif");
+    background-size: 60px 63px;
+}
+
+
+/* CAÍDA */
+
+@keyframes gifFall {
+
+    from {
+        transform: translateY(-10px);
+    }
+
+    to {
+        transform: translateY(110vh);
+    }
+
+}
+/* =========================================================
+   CINTAS DE PELÍCULA LATERALES
+   NO MODIFICA EL RESTO DEL DISEÑO ORIGINAL
+========================================================= */
+
+.side-film-window {
+
+    position: fixed;
+
+    top: 70px;
+    bottom: 25px;
+
+    width: 175px;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #e8dce1
+        );
+
+    border: 1px solid #6b6064;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 0 #ffffff,
+        0 8px 20px rgba(80,50,60,.25),
+        inset 0 0 0 2px #f8f1f3;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+}
+
+
+/* POSICIÓN IZQUIERDA */
+
+.side-film-left {
+    left: 20px;
+}
+
+
+/* POSICIÓN DERECHA */
+
+.side-film-right {
+    right: 20px;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR DE LAS VENTANAS
+========================================================= */
+
+.side-film-titlebar {
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8px;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #cfc6ca 48%,
+            #aaa2a5 52%,
+            #f4eef0
+        );
+
+    border-bottom: 2px solid #81777b;
+
+    color: #211d20;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+}
+
+
+/* BOTONCITOS */
+
+.side-film-buttons {
+
+    display: flex;
+
+    gap: 4px;
+
+}
+
+
+.side-film-button {
+
+    width: 14px;
+    height: 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #a69a9e;
+
+    background:
+        linear-gradient(
+            #ffffff,
+            #e5d9de
+        );
+
+    color: #8d7b82;
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   CINTA
+========================================================= */
+
+.side-film-content {
+
+    position: absolute;
+
+    top: 38px;
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+
+    background: #302b2e;
+
+}
+
+
+/* LA CINTA COMPLETA */
+
+.side-film-track {
+
+    position: absolute;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    animation:
+        filmDown 28s linear infinite;
+
+}
+
+
+/* =========================================================
+   POSTER
+========================================================= */
+
+.side-film-strip {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 15px 19px 18px;
+
+    background:
+        #302b2e;
+
+}
+
+
+/* PERFORACIONES IZQUIERDA Y DERECHA */
+
+.side-film-strip::before,
+.side-film-strip::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 11px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 7px,
+            #f7e8ee 7px,
+            #f7e8ee 17px,
+            transparent 17px,
+            transparent 25px
+        );
+
+}
+
+
+/* AGUJERITOS IZQUIERDA */
+
+.side-film-strip::before {
+    left: 3px;
+}
+
+
+/* AGUJERITOS DERECHA */
+
+.side-film-strip::after {
+    right: 3px;
+}
+
+
+/* =========================================================
+   MARCO DEL POSTER
+========================================================= */
+
+.side-film-poster {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 235px;
+
+    padding: 5px;
+
+    background: white;
+
+    border: 1px solid #b8aab0;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.35);
+
+}
+
+
+/* IMAGEN */
+
+.side-film-poster img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* TEXTO DEL POSTER */
+
+.side-film-name {
+
+    text-align: center;
+
+    color: #f8e9ef;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    padding-top: 6px;
+
+    text-shadow:
+        1px 1px #171417;
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN INFINITA HACIA ABAJO
+========================================================= */
+
+@keyframes filmDown {
+
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+
+/* =========================================================
+   SEGUNDA CINTA
+   VELOCIDAD LIGERAMENTE DIFERENTE
+========================================================= */
+
+.side-film-right .side-film-track {
+
+    animation-duration: 32s;
+
+}
+
+
+/* =========================================================
+   EN PANTALLAS PEQUEÑAS
+   SE OCULTAN PARA NO TAPAR TU PÁGINA
+========================================================= */
+
+@media(max-width:1250px) {
+
+    .side-film-window {
+        display: none;
+    }
+
+}
+
+</style>
+<style>
+    
+    /* =========================================================
+   ANIMES Y SERIES FAV — GALERÍA DE GIFS
+========================================================= */
+
+.gif-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 5px;
+}
+
+.gif-card {
+    background: #fff;
+    padding: 9px;
+    border: 1px solid #c6b7bd;
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.15);
+    transition: .3s;
+    position: relative;
+}
+
+.gif-card:hover {
+    transform:
+        translateY(-6px)
+        rotate(-1deg);
+    box-shadow:
+        0 8px 15px rgba(80,40,60,.25);
+}
+
+.gif-frame {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #e9c4d2,
+            #5d5559
+        );
+    border: 1px solid #b8aab0;
+}
+
+.gif-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gif-name {
+    text-align: center;
+    padding: 9px 5px 4px;
+    color: #68535b;
+    font-size: 17px;
+    font-style: italic;
+    font-family:
+        "Playfair Display",
+        serif;
+}
+
+.gif-name::before {
+    content: "♡ ";
+}
+
+.gif-name::after {
+    content: " ♡";
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:750px) {
+
+    .gif-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gif-frame {
+        height: 300px;
+    }
+
+}
+.gif-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.gif-row img {
+    width: 80px;
+    height: auto;
+}
 /* =========================================================
    TOJA!!
    BLOG 2000s / COQUETTE / VINTAGE / GOTHIC
@@ -1138,14 +1654,524 @@ footer {
 
 }
 
+/* =========================================================
+   VENTANA WEB PIXELADA RETRO — TOJA!!
+   ========================================================= */
+
+.retro-gif-window {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    margin: 30px auto;
+
+    background: #eadde1;
+
+    border: 3px solid #6b6064;
+
+    box-shadow:
+        0 4px 0 #ffffff,
+        0 8px 15px rgba(80,50,60,.3),
+        inset 0 0 0 2px #f8f1f3;
+
+    overflow: hidden;
+
+    image-rendering: pixelated;
+}
+
+/* BARRA SUPERIOR */
+
+.retro-gif-bar {
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    background: linear-gradient(
+        #ffffff,
+        #cfc6ca 48%,
+        #aaa2a5 52%,
+        #f4eef0
+    );
+
+    border-bottom: 2px solid #81777b;
+
+    color: #41363b;
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* BOTONES DE VENTANA */
+
+.retro-gif-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.retro-gif-buttons span {
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #a69a9e;
+
+    background: linear-gradient(
+        white,
+        #e5d9de
+    );
+
+    color: #78666d;
+
+    font-size: 11px;
+}
+
+/* CONTENEDOR DEL GIF */
+
+.retro-gif-content {
+    width: 100%;
+    height: calc(100% - 38px);
+
+    padding: 10px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #403b3e 0px,
+            #403b3e 4px,
+            #51484c 4px,
+            #51484c 8px
+        );
+
+    overflow: hidden;
+}
+
+/* GIF GRANDE */
+
+.retro-gif-content img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    image-rendering: pixelated;
+
+    border: 3px solid white;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:750px) {
+    .retro-gif-window {
+        max-width: 100%;
+    }
+}
+
 </style>
 
 </head>
 
 
 <body>
+    <!-- =========================================================
+     GIFS DECORATIVOS LATERALES
+========================================================= -->
+
+<img
+    src="./small-dancing-white-cat-dance-funny.gif"
+    class="side-gif side-gif-left"
+    alt=""
+>
+
+<img
+    src="./small-dancing-white-cat-dance-funny.gif"
+    class="side-gif side-gif-right"
+    alt=""
+>
+<!-- =========================================================
+     LLUVIA SUTIL DE GIFS
+========================================================= -->
+
+<div class="gif-rain">
+
+    <span class="gif-drop gif-one"
+        style="left:5%; animation-duration:9s; animation-delay:-3s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:12%; animation-duration:12s; animation-delay:-8s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:19%; animation-duration:10s; animation-delay:-5s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:27%; animation-duration:14s; animation-delay:-10s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:34%; animation-duration:11s; animation-delay:-2s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:42%; animation-duration:13s; animation-delay:-7s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:49%; animation-duration:10s; animation-delay:-6s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:57%; animation-duration:15s; animation-delay:-11s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:64%; animation-duration:12s; animation-delay:-4s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:72%; animation-duration:14s; animation-delay:-9s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:79%; animation-duration:11s; animation-delay:-7s;">
+    </span>
+
+    <span class="gif-drop gif-two"
+        style="left:87%; animation-duration:13s; animation-delay:-5s;">
+    </span>
+
+    <span class="gif-drop gif-one"
+        style="left:94%; animation-duration:10s; animation-delay:-8s;">
+    </span>
+
+</div>
+<!-- =========================================================
+     CINTA DE PELÍCULA — LADO IZQUIERDO
+========================================================= -->
+
+<div class="side-film-window side-film-left">
+
+    <div class="side-film-titlebar">
+
+        <span>
+            
+        </span>
+
+        <div class="side-film-buttons">
+
+            <div class="side-film-button">
+                −
+            </div>
+
+            <div class="side-film-button">
+                □
+            </div>
+
+            <div class="side-film-button">
+                ×
+            </div>
+
+        </div>
+
+    </div>
 
 
+    <div class="side-film-content">
+
+        <div class="side-film-track">
+
+
+            <!-- =========================
+                 PRIMERA VUELTA
+            ========================== -->
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./DrossRotzank pfp ᐟᐟ☆.jpg"
+                        alt="Dross Rotzank"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Dross Rotzank
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (9).jpg"
+                        alt="Melanie Martinez"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Chiikawa
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (10).jpg"
+                        alt="Britney Spears"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Usagi
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SEGUNDA VUELTA
+                 DUPLICADA PARA EL LOOP
+            ========================== -->
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./DrossRotzank pfp ᐟᐟ☆.jpg"
+                        alt="Dross Rotzank"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Dross Rotzank
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (9).jpg"
+                        alt="Melanie Martinez"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Chiikawa
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (10).jpg"
+                        alt="Britney Spears"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Usagi
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CINTA DE PELÍCULA — LADO DERECHO
+========================================================= -->
+
+<div class="side-film-window side-film-right">
+
+    <div class="side-film-titlebar">
+
+        <span>
+            
+        </span>
+
+        <div class="side-film-buttons">
+
+            <div class="side-film-button">
+                −
+            </div>
+
+            <div class="side-film-button">
+                □
+            </div>
+
+            <div class="side-film-button">
+                ×
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="side-film-content">
+
+        <div class="side-film-track">
+
+
+            <!-- PRIMERA VUELTA -->
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./DrossRotzank pfp ᐟᐟ☆.jpg"
+                        alt="Dross Rotzank"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Dross Rotzank
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (9).jpg"
+                        alt="Melanie Martinez"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Chiikawa
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (10).jpg"
+                        alt="Britney Spears"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Usagi
+                </div>
+
+            </div>
+
+
+            <!-- SEGUNDA VUELTA -->
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./DrossRotzank pfp ᐟᐟ☆.jpg"
+                        alt="Dross Rotzank"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Dross Rotzank
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (9).jpg"
+                        alt="Melanie Martinez"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Chiikawa
+                </div>
+
+            </div>
+
+
+            <div class="side-film-strip">
+
+                <div class="side-film-poster">
+
+                    <img
+                        src="./descarga (10).jpg"
+                        alt="Britney Spears"
+                    >
+
+                </div>
+
+                <div class="side-film-name">
+                    Usagi
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
 <div class="page">
 
 
@@ -1253,7 +2279,7 @@ footer {
     <div class="profile-image">
 
         <img
-            src="imagenes/NANAMI _I LOVE MY FICTIONAL HUSBAND_.jpg"
+            src="./NANAMI _I LOVE MY FICTIONAL HUSBAND_.jpg"
             alt="Nanami Kento"
         >
 
@@ -1286,7 +2312,17 @@ footer {
         </a>
 
     </div>
+<div class="gif-row">
 
+    <img src="./anime.gif" alt="decoración">
+
+    <img src="./cinnamon-nekopara.gif" alt="decoración">
+
+    <img src="./transparent-fluttershy.gif" alt="decoración">
+
+    <img src="./roblox-noob.gif" alt="decoración">
+
+</div>
 
     <br>
 
@@ -1345,31 +2381,33 @@ footer {
 
     <!-- SOCIAL -->
 
-    <div class="socials">
+    <<div class="socials">
 
-        <div
-            class="social"
-            onclick="socialAlert('Instagram')"
-        >
-            ◎
-        </div>
+    <a
+        class="social"
+        href="https://www.instagram.com/anis__pim/"
+        target="_blank"
+    >
+        ◎
+    </a>
 
-        <div
-            class="social"
-            onclick="socialAlert('TikTok')"
-        >
-            ♪
-        </div>
+    <a
+        class="social"
+        href="https://www.tiktok.com/@tojacon_01?_r=1&_t=ZS-9ADw5AZ9WB0"
+        target="_blank"
+    >
+        ♪
+    </a>
 
-        <div
-            class="social"
-            onclick="socialAlert('Tumblr')"
-        >
-            T
-        </div>
+    <a
+        class="social"
+        href="https://x.com/Tojacon_01"
+        target="_blank"
+    >
+        T
+    </a>
 
-    </div>
-
+</div>
 
     <!-- INFO -->
 
@@ -1379,29 +2417,24 @@ footer {
         <div class="dni">
 
             <span class="label">
-                dni
+                
             </span>
-
-            minors, edtwt,
-            shtwt
-
+            
         </div>
 
 
         <div class="interests">
 
             <span class="label">
-                interests
+                
             </span>
 
-            red bull · monster ·
-            flavored cigs
+            
 
             <br>
 
             <i>
-                lucky charms · tarot · crystals
-            </i>
+                
 
         </div>
 
@@ -1451,7 +2484,7 @@ footer {
         <div class="nanami-photo">
 
             <img
-                src="imagenes/Kento Nanami.jpg"
+                src="./Kento Nanami.jpg"
                 alt="Nanami Kento"
             >
 
@@ -1543,7 +2576,7 @@ footer {
             <div class="album-cover">
 
                 <img
-                    src="imagenes/Melanie Martinez (1).jpg"
+                    src="./Melanie Martinez (1).jpg"
                     alt="Melanie Martinez"
                 >
 
@@ -1552,12 +2585,12 @@ footer {
 
             <div class="album-title">
 
-                Cry Baby
+                Melanie Martinez
 
                 <br>
 
                 <small>
-                    Melanie Martinez
+                    Cry Baby
                 </small>
 
             </div>
@@ -1574,7 +2607,7 @@ footer {
             <div class="album-cover">
 
                 <img
-                    src="imagenes/descarga (8).jpg"
+                    src="./descarga (8).jpg"
                     alt="Marina"
                 >
 
@@ -1588,7 +2621,7 @@ footer {
                 <br>
 
                 <small>
-                    Melanie Martinez
+                    Electra Heart
                 </small>
 
             </div>
@@ -1605,7 +2638,7 @@ footer {
             <div class="album-cover">
 
                 <img
-                    src="imagenes/Britney Spears.jpg"
+                    src="./Britney Spears.jpg"
                     alt="Britney Spears"
                 >
 
@@ -1619,7 +2652,7 @@ footer {
                 <br>
 
                 <small>
-                    Melanie Martinez
+                    In the Zone
                 </small>
 
             </div>
@@ -1705,7 +2738,7 @@ footer {
         <div class="photo">
 
             <img
-                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM (2).jpeg"
+                src="./WhatsApp Image 2026-09-18 at 1.11.30 PM (2).jpeg"
                 alt="foto"
             >
 
@@ -1715,7 +2748,7 @@ footer {
         <div class="photo">
 
             <img
-                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM (3).jpeg"
+                src="./WhatsApp Image 2026-09-18 at 1.11.30 PM (3).jpeg"
                 alt="foto"
             >
 
@@ -1725,7 +2758,7 @@ footer {
         <div class="photo">
 
             <img
-                src="imagenes/WhatsApp Image 2026-09-18 at 1.11.30 PM.jpeg"
+                src="./WhatsApp Image 2026-09-18 at 1.11.30 PM.jpeg"
                 alt="foto"
             >
 
@@ -1735,7 +2768,7 @@ footer {
         <div class="photo">
 
             <img
-                src="WhatsApp Image 2026-09-18 at 1.11.30 PM (1).jpeg"
+                src="./WhatsApp Image 2026-09-18 at 1.11.30 PM (1).jpeg"
                 alt="foto"
             >
 
@@ -1746,7 +2779,157 @@ footer {
 
 
 </section>
+<!-- =====================================================
+     ANIMES Y SERIES FAV
+===================================================== -->
 
+<section class="blog-section" id="anime-series">
+
+    <div class="blog-title">
+        animes y series fav
+    </div>
+
+    <div class="gif-gallery">
+
+        <!-- GIF 1 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./nana-hachi-nana-anime.gif"
+                    alt="Anime favorito 1"
+                >
+            </div>
+
+            <div class="gif-name">
+                Nana
+            </div>
+
+        </div>
+
+
+        <!-- GIF 2 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./regular-show.gif"
+                    alt="Anime favorito 2"
+                >
+            </div>
+
+            <div class="gif-name">
+                Regular Show
+            </div>
+
+        </div>
+
+
+        <!-- GIF 3 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./panty-and-stocking-paswg.gif"
+                    alt="Anime favorito 3"
+                >
+            </div>
+
+            <div class="gif-name">
+                Panty & Stocking with Garterbelt
+            </div>
+
+        </div>
+
+
+        <!-- GIF 4 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./clop-caramel-dansen.gif"
+                    alt="Anime favorito 4"
+                >
+            </div>
+
+            <div class="gif-name">
+                My Little Pony: Friendship is Magic
+            </div>
+
+        </div>
+
+
+        <!-- GIF 5 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./evangelion-neon-genesis-evangelion.gif"
+                    alt="Serie favorita 1"
+                >
+            </div>
+
+            <div class="gif-name">
+                Neon Genesis Evangelion
+            </div>
+
+        </div>
+
+
+        <!-- GIF 6 -->
+        <div class="gif-card">
+
+            <div class="gif-frame">
+                <img
+                    src="./31-minutos-tulio-triviño.gif"
+                    alt="Serie favorita 2"
+                >
+            </div>
+
+            <div class="gif-name">
+                31 Minutos
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     VENTANA WEB PIXELADA RETRO
+====================================================== -->
+
+<div class="retro-gif-window">
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="retro-gif-bar">
+
+        <span>
+            † Bye Bye  ♡
+        </span>
+
+        <div class="retro-gif-buttons">
+            <span>−</span>
+            <span>□</span>
+            <span>×</span>
+        </div>
+
+    </div>
+
+    <!-- GIF GRANDE -->
+
+    <div class="retro-gif-content">
+
+        <img
+            src="./miku-hatsune (1).gif"
+            alt="GIF decorativo"
+        >
+
+    </div>
+
+</div>
 
 <!-- =====================================================
      MINI BLOG
@@ -1757,7 +2940,7 @@ footer {
 
     <div class="blog-title">
 
-        toja's diary
+        Frses randoms XD
 
     </div>
 
@@ -1765,7 +2948,7 @@ footer {
     <p>
 
         <b>
-            09 / 03 / 2007
+        
         </b>
 
     </p>
@@ -1780,15 +2963,16 @@ footer {
 
     <p>
 
-        también cambié el fondo de mi perfil
-        como 14 veces.
+        "Oye Nana, ¿Te acuerdas cómo nos conocimos?
+Yo creo en cosas como el destino, por eso…
+creo que fue él quién nos unió."
 
     </p>
 
 
     <p>
 
-        probablemente mañana vuelva a cambiarlo.
+        chintrolas 
 
     </p>
 
@@ -1820,11 +3004,11 @@ footer {
         font-size:12px;
     ">
 
-        best viewed with Internet Explorer
+     WEB WEB 
 
         <br>
 
-        † 2000s forever †
+        † wasa †
 
     </span>
 
